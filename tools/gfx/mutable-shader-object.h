@@ -245,7 +245,10 @@ namespace gfx
         MutableRootShaderObject(RendererBase* device, Slang::RefPtr<ShaderProgramBase> program)
         {
             this->m_device = device;
-            auto programLayout = program->slangProgram->getLayout();
+            Slang::RefPtr<ShaderProgramBase>& programRef = program;
+            Slang::ComPtr<slang::IComponentType>& slangProgramRef = programRef->slangProgram;
+            slang::ProgramLayout* programLayout = slangProgramRef->getLayout();
+            //auto programLayout = program->slangProgram->getLayout();
             SlangInt entryPointCount = programLayout->getEntryPointCount();
             for (SlangInt e = 0; e < entryPointCount; ++e)
             {

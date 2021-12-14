@@ -11,6 +11,8 @@ namespace gfx_test
 {
     void mutableRootShaderObjectTestImpl(IDevice* device, UnitTestContext* context)
     {
+
+        //IDevice* device = static_cast<DebugDevice*>(device);
         Slang::ComPtr<ITransientResourceHeap> transientHeap;
         ITransientResourceHeap::Desc transientHeapDesc = {};
         transientHeapDesc.constantBufferSize = 4096;

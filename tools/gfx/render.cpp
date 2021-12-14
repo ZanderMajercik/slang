@@ -232,6 +232,7 @@ extern "C"
 
     SlangResult _createDevice(const IDevice::Desc* desc, IDevice** outDevice)
     {
+        gfxEnableDebugLayer(); // TODO: Restore
         switch (desc->deviceType)
         {
 #if SLANG_WINDOWS_FAMILY

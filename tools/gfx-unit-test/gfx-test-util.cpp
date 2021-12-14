@@ -59,7 +59,8 @@ namespace gfx_test
         gfx::IShaderProgram::Desc programDesc = {};
         programDesc.slangProgram = composedProgram.get();
 
-        auto shaderProgram = device->createProgram(programDesc);
+        // TODO: restore
+        ComPtr<gfx::IShaderProgram> shaderProgram = device->createProgram(programDesc);
 
         outShaderProgram = shaderProgram;
         return SLANG_OK;

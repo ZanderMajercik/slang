@@ -1000,6 +1000,7 @@ static RenderApiFlags _getAvailableRenderApiFlags(TestContext* context)
                     availableRenderApiFlags |= RenderApiFlags(1) << int(apiType);
                     continue;
                 }
+
                 // Try starting up the device
                 CommandLine cmdLine;
                 cmdLine.setExecutableLocation(ExecutableLocation(context->options.binDir, "render-test"));
